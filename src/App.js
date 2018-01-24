@@ -51,9 +51,9 @@ class App extends Component {
               <div className="centered">
                 <div className="site-branding">
                   <span className="site-channel">
-                    <p>channel</p>
+                    <p>Espresso House - Kungsgatan 17, Stockholm</p>
                   </span>
-                  <h1 className="site-title">Sunny Organic</h1>
+                  <h1 className="site-title">Recently played songs </h1>
                 </div>
               </div>
             </header>,

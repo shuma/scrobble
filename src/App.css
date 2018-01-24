@@ -49,7 +49,7 @@ Header styles minus menu
 }
 
 .site-title {
-  margin: 0 0 1em;
+  margin: 0 0 2em;
   padding: 0 0 1em;
   font-size: 2em;
   text-align: center;
@@ -59,7 +59,7 @@ Header styles minus menu
 .site-channel > p {
   text-align: center;
   font-family: "SpotifyMedium";
-  padding-top: 2.5em;
+  padding: 2em 0 0.1em;
 }
 
 @media screen and (min-width: 44.44em) {
