@@ -17,7 +17,6 @@ import { PlayedList } from "./components/Played";
  */
 function imagesLoaded(parentNode) {
   const imgElements = parentNode.querySelectorAll("img");
-  console.log(imgElements);
   for (const img of imgElements) {
     if (!img.complete) {
       console.log("Not complete");
@@ -31,7 +30,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrobbles: []
+      scrobbles: [],
+      loading: true
     };
   }
   componentDidMount() {
@@ -42,7 +42,8 @@ class App extends Component {
       scrobbles.reverse();
       scrobbles.map(this.addTime);
       this.setState({
-        scrobbles: scrobbles
+        scrobbles: scrobbles,
+        loading: false
       });
       api.subscribe(this.updateScrobble);
     });

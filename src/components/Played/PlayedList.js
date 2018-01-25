@@ -1,5 +1,4 @@
 import React from "react";
-
 const PlayedList = props => {
   return [
     <main className="centered">
@@ -10,7 +9,7 @@ const PlayedList = props => {
             let artist_name = data.artists
               .map(artist => artist.name)
               .join(", ");
-            let { uri, image_url, song_name, time } = data;
+            let { uri, image_url, song_name, time, colors } = data;
             return (
               <article className="card">
                 <a href={uri}>
@@ -18,7 +17,9 @@ const PlayedList = props => {
                     <img
                       src={image_url}
                       alt={`${song_name} - ${artist_name}}`}
+                      onLoad={props.handleImageChange}
                     />
+                    <span className="playbutton">Play on Spotify</span>
                   </figure>
                   <div className="card-content">
                     <h2>{song_name}</h2>

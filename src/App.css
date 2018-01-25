@@ -192,3 +192,20 @@ img {
   font-family: "SpotifyMedium";
   font-size: 1em;
 }
+.thumbnail {
+  position: relative;
+}
+
+.playbutton {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+  background-color: #1ed761;
+  padding: 0.35rem 1.5rem;
+  border-radius: 5em;
+  font-size: 12px;
+  opacity: 0.8;
+  color: #ffffff;
+  font-family: "SpotifyBook";
+  border-color: transparent;
+}
