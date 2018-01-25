@@ -158,6 +158,7 @@ img {
     -ms-flex: 0 1 calc(50% - 0.5em);
     flex: 0 1 calc(50% - 0.5em);
     /* width: calc(50% - 1em); */
+    transition: all 0.1s ease-in-out;
   }
 } /* mq 40em*/
 
@@ -181,3 +182,13 @@ img {
     transition: all 0.1s ease-in-out;
   }
 } /* mq 60em*/
+
+/*TODO: */
+
+.playhistory-label {
+  padding-left: 1em;
+  margin-bottom: 1em;
+  color: #666;
+  font-family: "SpotifyMedium";
+  font-size: 1em;
+}

@@ -1,10 +1,9 @@
 import React from "react";
-import ImageLoader from "react-imageloader";
-import "./Played.css";
 
 const PlayedList = props => {
   return [
     <main className="centered">
+      <h2 className="playhistory-label">Recently played songs</h2>
       <div className="centered">
         <section className="cards">
           {props.data.map((data, index) => {
@@ -18,13 +17,13 @@ const PlayedList = props => {
                   <figure className="thumbnail">
                     <img
                       src={image_url}
-                      alt={`${song_name} - ${artist_name}`}
+                      alt={`${song_name} - ${artist_name}}`}
                     />
                   </figure>
                   <div className="card-content">
                     <h2>{song_name}</h2>
                     <p>{artist_name}</p>
-                    <p className="last-played">{`Played - ${time}`}</p>
+                    <p className="last-played">{time}</p>
                   </div>
                 </a>
               </article>

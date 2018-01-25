@@ -4201,6 +4201,10 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, "mkdirp@>=0.5 0", mkdirp@~0.5.0, mkdirp@~0.5.1, mk
   dependencies:
     minimist "0.0.8"
 
+moment:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -5201,9 +5205,11 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-react-imageloader:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-imageloader/-/react-imageloader-3.0.0.tgz#a39ddc9f500db189a56020787b4f12963887a275"
+react-placeholder:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-placeholder/-/react-placeholder-2.0.0.tgz#5117b4758927dc5ae5fcbf62552ab98209f6666c"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-scripts:
   version "1.1.0"
