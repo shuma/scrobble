@@ -96,6 +96,7 @@ Header styles minus menu
     0 5px 15px rgba(0, 0, 0, 0.07);
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   border-radius: 3px;
+  flex-direction: column;
 }
 
 .card a {
@@ -180,6 +181,7 @@ img {
   .card:hover {
     transform: scale(1.2);
     transition: all 0.1s ease-in-out;
+    z-index: 9999;
   }
 } /* mq 60em*/
 
@@ -208,4 +210,16 @@ img {
   color: #ffffff;
   font-family: "SpotifyBook";
   border-color: transparent;
+  -webkit-box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.2);
+}
+
+/*Transtions for tracks*/
+.anim-appear {
+  opacity: 0.01;
+}
+
+.anim-appear.anim-appear-active {
+  opacity: 2;
+  transition: opacity 3s ease-in;
 }

@@ -1,5 +1,4 @@
 import React from "react";
-
 const Header = ({ location, company }) => (
   <header className="masthead clear">
     <div className="centered">

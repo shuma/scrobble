@@ -1,2 +1,3 @@
 import PlayedList from "./PlayedList";
-export { PlayedList };
+import Track from "./Track";
+export { PlayedList, Track };

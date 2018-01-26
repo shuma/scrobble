@@ -9,23 +9,6 @@ import { Loading } from "./components/Loading";
 import { Header } from "./components/Header";
 import { PlayedList } from "./components/Played";
 
-/**
- * Given a DOM element, searches it for <img> tags and checks if all of them
- * have finished loading or not.
- * @param  {Element} parentNode
- * @return {Boolean}
- */
-function imagesLoaded(parentNode) {
-  const imgElements = parentNode.querySelectorAll("img");
-  for (const img of imgElements) {
-    if (!img.complete) {
-      console.log("Not complete");
-      return false;
-    }
-  }
-  return true;
-}
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -72,23 +55,11 @@ class App extends Component {
       "YYYYMMDD"
     ).fromNow();
   };
-  /**
-   * Check if img have loaded
-   */
-  handleImageChange = () => {
-    this.setState({
-      loading: !imagesLoaded(this.cardsElement)
-    });
-  };
 
   render() {
     const { scrobbles, loading } = this.state;
     return (
-      <div
-        ref={element => {
-          this.cardsElement = element;
-        }}
-      >
+      <div>
         {loading ? (
           <Loading />
         ) : (
@@ -96,9 +67,10 @@ class App extends Component {
             <Header
               location="Kungsgatan 17, Stockholm"
               company="Espresso House"
+              key="Header"
             />,
 
-            <PlayedList data={scrobbles} />
+            <PlayedList key="PlayedList" data={scrobbles} />
           ]
         )}
       </div>

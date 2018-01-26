@@ -1,7 +1,9 @@
 import React from "react";
+import Track from "./Track";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 const PlayedList = props => {
   return [
-    <main className="centered">
+    <main className="centered" key="PlayedList">
       <h2 className="playhistory-label">Recently played songs</h2>
       <div className="centered">
         <section className="cards">
@@ -11,23 +13,26 @@ const PlayedList = props => {
               .join(", ");
             let { uri, image_url, song_name, time, colors } = data;
             return (
-              <article className="card">
-                <a href={uri}>
-                  <figure className="thumbnail">
-                    <img
-                      src={image_url}
-                      alt={`${song_name} - ${artist_name}}`}
-                      onLoad={props.handleImageChange}
-                    />
-                    <span className="playbutton">Play on Spotify</span>
-                  </figure>
-                  <div className="card-content">
-                    <h2>{song_name}</h2>
-                    <p>{artist_name}</p>
-                    <p className="last-played">{time}</p>
-                  </div>
-                </a>
-              </article>
+              <ReactCSSTransitionGroup
+                transitionName="anim"
+                transitionAppear={true}
+                transitionAppearTimeout={5000}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="article"
+                className="card"
+                key={index}
+              >
+                <Track
+                  uri={uri}
+                  image_url={image_url}
+                  song_name={song_name}
+                  artist_name={artist_name}
+                  colors={colors}
+                  time={time}
+                  key={index}
+                />
+              </ReactCSSTransitionGroup>
             );
           })}
         </section>
