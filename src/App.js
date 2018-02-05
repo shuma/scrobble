@@ -7,14 +7,15 @@ import "../src/App.css";
 // Components
 import { Loading } from "./components/Loading";
 import { Header } from "./components/Header";
-import { PlayedList } from "./components/Played";
+import { Scrobble } from "./components/Scrobble";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       scrobbles: [],
-      loading: true
+      loading: true,
+      fadeleft: false
     };
   }
   componentDidMount() {
@@ -30,6 +31,25 @@ class App extends Component {
       });
       api.subscribe(this.updateScrobble);
     });
+
+    /*     const mockupdata = {
+      image_url:
+        "https://radio.api.soundtrackyourbrand.com/metadata/spotify:track:0TxMRiAvI1s0L821BJJWzx/image",
+      uri: "spotify:track:3QRM0qZB7oMYavveH0iEqx",
+      song_name: "Test",
+      artists: [
+        {
+          name: "Tina Turner",
+          uri: "spotify:artist:1zuJe6b1roixEKMOtyrEak"
+        }
+      ],
+      colors: "red",
+      time: "test",
+      key: "test",
+      fadein: "fade-in"
+    }; */
+
+    //this.timeout(mockupdata);
   }
 
   /**
@@ -40,7 +60,6 @@ class App extends Component {
       ScrobbleApi.playDate(newScrobble),
       "YYYYMMDD"
     ).fromNow();
-
     this.setState(prevState => ({
       scrobbles: [newScrobble, ...prevState.scrobbles]
     }));
@@ -56,25 +75,37 @@ class App extends Component {
     ).fromNow();
   };
 
+  /**
+   * Mockup data timer
+   */
+  timeout = mockupdata => {
+    setTimeout(() => {
+      this.setState(
+        prevState => ({
+          scrobbles: [mockupdata, ...prevState.scrobbles]
+        }),
+        () => {
+          this.timeout(mockupdata);
+        }
+      );
+    }, 1000);
+  };
+
   render() {
     const { scrobbles, loading } = this.state;
-    return (
-      <div>
-        {loading ? (
-          <Loading />
-        ) : (
-          [
-            <Header
-              location="Kungsgatan 17, Stockholm"
-              company="Espresso House"
-              key="Header"
-            />,
 
-            <PlayedList key="PlayedList" data={scrobbles} />
-          ]
-        )}
-      </div>
-    );
+    if (loading) {
+      return <Loading />;
+    }
+
+    return [
+      <Header
+        location="Kungsgatan 17, Stockholm"
+        company="Espresso House"
+        key="Header"
+      />,
+      <Scrobble key="PlayedList" data={scrobbles} />
+    ];
   }
 }
 
