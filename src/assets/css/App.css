@@ -1,19 +1,19 @@
 @font-face {
   font-family: "SpotifyBold";
   src: local("CircularSpotifyHead-Bold-4433a3"),
-    url(./assets/fonts/CircularSpotifyHead-Bold-4433a3.woff) format("woff");
+    url(./../fonts/CircularSpotifyHead-Bold-4433a3.woff) format("woff");
 }
 
 @font-face {
   font-family: "SpotifyMedium";
   src: local("CircularSpotifyText-Medium"),
-    url(./assets/fonts/CircularSpotifyText-Medium-9c5342.woff) format("woff");
+    url(./../fonts/CircularSpotifyText-Medium-9c5342.woff) format("woff");
 }
 
 @font-face {
   font-family: "SpotifyBook";
   src: local("CircularSpotifyText-Book-748e66"),
-    url(./assets/fonts/CircularSpotifyText-Book-748e66.woff) format("woff");
+    url(./../fonts/CircularSpotifyText-Book-748e66.woff) format("woff");
 }
 * {
   -webkit-font-smoothing: antialiased;

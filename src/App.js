@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import moment from "moment";
 import ScrobbleApi from "../src/utils/scrobble-api";
-import "../src/reset.css";
-import "../src/App.css";
+import "../src/assets/css/App.css";
+import "../src/assets/css/reset.css";
 
 // Components
 import { Loading } from "./components/Loading";
