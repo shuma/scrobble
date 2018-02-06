@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Container = styled.header`
   background-color: #ffffff;
@@ -12,18 +12,24 @@ const Container = styled.header`
   }
 `;
 
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+`;
+
 const Brand = styled.div`
-  & > p {
-    text-align: center;
-  }
-  & > h1 {
-    text-align: center;
-  }
+  text-align: center;
+  animation: ${FadeIn} 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 `;
 
 const BrandLocation = styled.p`
   font-family: "SpotifyMedium";
   padding: 2em 0 0.1em;
+  color: #666;
 `;
 const BrandName = styled.h1`
   margin: 0 0 1.5em;

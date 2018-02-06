@@ -14,8 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       scrobbles: [],
-      loading: true,
-      fadeleft: false
+      loading: true
     };
   }
   componentDidMount() {
@@ -31,25 +30,6 @@ class App extends Component {
       });
       api.subscribe(this.updateScrobble);
     });
-
-    /*     const mockupdata = {
-      image_url:
-        "https://radio.api.soundtrackyourbrand.com/metadata/spotify:track:0TxMRiAvI1s0L821BJJWzx/image",
-      uri: "spotify:track:3QRM0qZB7oMYavveH0iEqx",
-      song_name: "Test",
-      artists: [
-        {
-          name: "Tina Turner",
-          uri: "spotify:artist:1zuJe6b1roixEKMOtyrEak"
-        }
-      ],
-      colors: "red",
-      time: "test",
-      key: "test",
-      fadein: "fade-in"
-    }; */
-
-    //this.timeout(mockupdata);
   }
 
   /**
@@ -61,7 +41,8 @@ class App extends Component {
       "YYYYMMDD"
     ).fromNow();
     this.setState(prevState => ({
-      scrobbles: [newScrobble, ...prevState.scrobbles]
+      scrobbles: [newScrobble, ...prevState.scrobbles],
+      newScrobble: true
     }));
   };
 

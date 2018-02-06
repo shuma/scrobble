@@ -1,7 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Track from "./Track";
+
+const FadeLeft = keyframes`
+0% {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+  opacity: 0;
+}
+100% {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+`;
+
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+`;
 
 const Container = styled.main`
   margin: 0 auto;
@@ -16,6 +38,7 @@ const Label = styled.h2`
   color: #666;
   font-family: "SpotifyMedium";
   font-size: 1em;
+  animation: ${FadeIn} 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 `;
 
 const Cards = styled.section`
@@ -44,6 +67,7 @@ const Card = styled.article`
   flex-direction: column;
   border-radius: 3px;
   text-decortion: none;
+  animation: ${FadeLeft} 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
   @media screen and (min-width: 40em) {
     margin-bottom: 1em;
@@ -54,7 +78,6 @@ const Card = styled.article`
     -ms-flex: 0 1 calc(50% - 0.5em);
     flex: 0 1 calc(50% - 0.5em);
     /* width: calc(50% - 1em); */
-    transition: all 0.1s ease-in-out;
   }
 
   @media screen and (min-width: 60em) {
@@ -68,10 +91,8 @@ const Card = styled.article`
     /* width: calc(33% - 1em); */
   }
   &:hover {
-    transform: translateY(-2px);
     box-shadow: 0 18px 35px rgba(50, 50, 93, 0.1),
       0 8px 15px rgba(0, 0, 0, 0.07);
-    transition: all 0.1s ease-in-out;
     z-index: 9999;
   }
   & > a {

@@ -25,6 +25,7 @@ const FadeIn = keyframes`
 
 const Cover = styled.div`
   background-image: url(${props => props.coverImg});
+  outline: 1px solid transparent;
   padding-top: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,6 +52,9 @@ const SpotifyPlayButton = styled.span`
   border-color: transparent;
   -webkit-box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: #1ed761;
+  }
 `;
 
 const TrackInfo = styled.div`
@@ -100,7 +104,7 @@ Track.propTypes = {
   uri: PropTypes.string,
   image_url: PropTypes.string,
   song_name: PropTypes.string,
-  colors: PropTypes.string,
+  colors: PropTypes.object,
   time: PropTypes.string,
   key: PropTypes.string
 };
