@@ -36,10 +36,7 @@ class App extends Component {
    * Update scrobble state with new scrobble and format time date with momment.js
    */
   updateScrobble = newScrobble => {
-    newScrobble.time = moment(
-      ScrobbleApi.playDate(newScrobble),
-      "YYYYMMDD"
-    ).fromNow();
+    newScrobble.time = moment(ScrobbleApi.playDate(newScrobble)).format("lll");
     this.setState(prevState => ({
       scrobbles: [newScrobble, ...prevState.scrobbles],
       newScrobble: true
@@ -50,10 +47,7 @@ class App extends Component {
    * Add new time object in scrobble item and format it with moment.js
    */
   addTime = scrobble => {
-    scrobble.time = moment(
-      ScrobbleApi.playDate(scrobble),
-      "YYYYMMDD"
-    ).fromNow();
+    scrobble.time = moment(ScrobbleApi.playDate(scrobble)).format("lll");
   };
 
   /**

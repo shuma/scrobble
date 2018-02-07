@@ -75,6 +75,7 @@ const ArtistName = styled.p`
   font-size: 95%;
   font-family: "SpotifyBook";
   color: #666;
+  margin-top: 0.4em;
 `;
 
 const TimeStamp = styled.p`
@@ -82,6 +83,7 @@ const TimeStamp = styled.p`
   margin-top: 5px;
   color: #bfbfbf;
   font-family: "SpotifyBook";
+  margin-top: 0.7em;
 `;
 
 const Track = ({ uri, image_url, song_name, artist_name, colors, time }) => (
